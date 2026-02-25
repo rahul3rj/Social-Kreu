@@ -31,6 +31,9 @@
   --color-card-border: hsl(var(--card-border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
+
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Outfit', sans-serif;
 }
 
 :root {
@@ -66,9 +69,6 @@
   --ring: 272 35% 18%;
 
   --radius: 0.5rem;
-
-  --font-sans: 'Plus Jakarta Sans', sans-serif;
-  --font-display: 'Outfit', sans-serif;
 }
 
 @layer base {
