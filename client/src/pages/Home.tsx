@@ -59,10 +59,11 @@ export default function Home() {
             onClick={() => scrollToSection("hero")}
             data-testid="link-home"
           >
-            <div className="w-8 h-8 bg-primary rounded flex items-center justify-center">
+            <img onClick={() => scrollToSection("hero")} src="/logo.png" alt="Logo" className="h-12 cursor-pointer" />
+            {/* <div className="w-8 h-8 bg-primary rounded flex items-center justify-center">
               <span className="text-white text-xl leading-none">S</span>
-            </div>
-            SocialKreu.
+            </div> */}
+            {/* SocialKreu. */}
           </div>
 
           {/* Desktop Nav */}
