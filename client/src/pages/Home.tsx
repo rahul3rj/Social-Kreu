@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
-import { ArrowRight, BarChart, Crosshair, Layers, Target, CheckCircle2, Menu, X } from "lucide-react";
+import { ArrowRight, BarChart, Crosshair, Layers, Target, CheckCircle2, Menu, X, Phone, Mail, MapPin, Instagram, Facebook, MessageCircle, Heart, Wrench, Laptop } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Assets
@@ -72,18 +72,17 @@ export default function Home() {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="hover:text-primary/70 transition-colors"
+                className="hover:text-primary/70 transition-colors cursor-pointer"
                 data-testid={`link-${link.id}`}
               >
                 {link.name}
               </button>
             ))}
-            <Button 
-              className="rounded-full px-6" 
-              onClick={() => scrollToSection("contact")}
-              data-testid="button-nav-contact"
-            >
-              Let's Talk
+            <Button asChild className="rounded-full px-6" data-testid="button-nav-contact">
+              <a href="tel:+916376827535" aria-label="Call SocialKreu" className="flex items-center">
+                <Phone className="mr-2 w-4 h-4" />
+                Let's Talk
+              </a>
             </Button>
           </nav>
 
@@ -110,12 +109,11 @@ export default function Home() {
                 {link.name}
               </button>
             ))}
-            <Button 
-              className="mt-4" 
-              onClick={() => scrollToSection("contact")}
-              data-testid="button-mobile-contact"
-            >
-              Let's Talk
+            <Button asChild className="mt-4" data-testid="button-mobile-contact">
+              <a href="tel:+916376827535" aria-label="Call SocialKreu" className="flex items-center text-left">
+                <Phone className="mr-2 w-4 h-4" />
+                Let's Talk
+              </a>
             </Button>
           </div>
         )}
@@ -158,7 +156,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="rounded-full text-base h-14 px-8 shadow-lg shadow-primary/20 group"
+                  className="rounded-full text-base h-14 px-8 shadow-lg shadow-primary/20 group cursor-pointer"
                   onClick={() => scrollToSection("contact")}
                   data-testid="button-hero-cta"
                 >
@@ -168,7 +166,7 @@ export default function Home() {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="rounded-full text-base h-14 px-8 border-primary/20 hover:bg-secondary/50 group"
+                  className="rounded-full text-base h-14 px-8 border-primary/20 hover:bg-secondary/50 group cursor-pointer"
                   onClick={() => scrollToSection("framework")}
                   data-testid="button-hero-secondary"
                 >
@@ -187,7 +185,7 @@ export default function Home() {
                 data-testid="img-hero"
               />
               {/* Floating element */}
-              <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-xl border border-border/50 max-w-xs">
+              <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-xl border border-border/50 max-w-xs select-none">
                 <div className="flex items-center gap-4 mb-2">
                   <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary">
                     <BarChart size={24} />
@@ -239,14 +237,16 @@ export default function Home() {
                   <p>
                     <strong className="text-foreground">Most brands don’t struggle because they lack effort. They struggle because their marketing lacks structure.</strong>
                   </p>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Posting regularly without a positioning strategy.</li>
+                    <li>Running ads without a clear funnel.</li>
+                    <li>Creating content without aligning it to business objectives.</li>
+                  </ul>
                   <p>
-                    Posting regularly without a positioning strategy. Running ads without a clear funnel. Creating content without aligning it to business objectives.
-                  </p>
-                  <p>
-                    At SocialKreu, we focus on building clarity first — then designing systems that support sustainable growth.
+                    At SocialKreu, we focus on building clarity first, then designing systems that support sustainable growth.
                   </p>
                   <p className="pl-6 border-l-4 border-primary font-medium text-foreground italic py-2">
-                    "We don’t believe in 'doing more marketing.' We believe in doing the right marketing — strategically and consistently."
+                    "We don't believe in aimless promotion. We believe in doing the right marketing strategically and consistently."
                   </p>
                 </div>
               </div>
@@ -330,7 +330,7 @@ export default function Home() {
                 <div className="uppercase tracking-widest text-sm font-bold text-secondary/80 mb-4">Our Growth Framework</div>
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance text-white">Growth becomes predictable when the system is intentional.</h2>
                 <p className="text-xl text-white/70 mb-12">
-                  This structured approach ensures growth is strategic — not reactive.
+                  This structured approach ensures growth is strategic, not reactive.
                 </p>
 
                 <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:ml-[1.375rem] before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/20 before:to-transparent">
@@ -343,7 +343,7 @@ export default function Home() {
                     {
                       step: "02",
                       title: "Strategic System Design",
-                      desc: "We create a structured roadmap — positioning strategy, content architecture, paid media plan, and conversion pathways tailored to your objectives."
+                      desc: "We create a structured roadmap, positioning strategy, content architecture, paid media plan, and conversion pathways tailored to your objectives."
                     },
                     {
                       step: "03",
@@ -392,7 +392,7 @@ export default function Home() {
                 <div className="uppercase tracking-widest text-sm font-bold text-primary/60 mb-4">Experience</div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">Expertise & Execution</h2>
                 <p className="text-muted-foreground mb-8 text-lg">
-                  SocialKreu is built on hands-on experience across diverse digital ecosystems and growth-driven environments. We understand both creative storytelling and performance analytics — and how to align the two.
+                  SocialKreu is built on hands-on experience across diverse digital ecosystems and growth-driven environments. We understand both creative storytelling and performance analytics, and how to align the two.
                 </p>
                 
                 <ul className="space-y-4">
@@ -455,21 +455,21 @@ export default function Home() {
             
             <div className="grid sm:grid-cols-3 gap-6 mb-16">
               <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
-                <div className="text-secondary font-bold mb-2">The Problem</div>
-                <div className="text-white/70">They produce content but lack positioning.</div>
+                {/* <div className="text-secondary font-bold mb-2">The Problem</div> */}
+                <div className="text-white font-bold mb-2">They produce content but lack positioning.</div>
               </div>
               <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
-                <div className="text-secondary font-bold mb-2">The Problem</div>
-                <div className="text-white/70">They run ads but lack funnel clarity.</div>
+                {/* <div className="text-secondary font-bold mb-2">The Problem</div> */}
+                <div className="text-white font-bold mb-2">They run ads but lack funnel clarity.</div>
               </div>
               <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
-                <div className="text-secondary font-bold mb-2">The Problem</div>
-                <div className="text-white/70">They generate traffic but struggle with conversion.</div>
+                {/* <div className="text-secondary font-bold mb-2">The Problem</div> */}
+                <div className="text-white font-bold mb-2 ">They generate traffic but struggle with conversion.</div>
               </div>
             </div>
 
             <p className="text-lg text-white/70 mb-16 max-w-2xl mx-auto">
-              SocialKreu was created to bridge that gap. We combine strategic thinking, creative execution, and performance optimization into one cohesive growth system. Our focus is not on activity — it’s on outcomes.
+              SocialKreu was created to bridge that gap. We combine strategic thinking, creative execution, and performance optimization into one cohesive growth system. Our focus is not on activity, it’s on outcomes.
             </p>
 
             <div className="bg-secondary text-primary p-10 md:p-16 rounded-[3rem] text-left relative overflow-hidden shadow-2xl">
@@ -496,7 +496,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-balance">Ready to Build a Strategic Growth System?</h2>
             
             <p className="text-xl text-muted-foreground mb-8">
-              If you’re looking for tactical posting support, we may not be the right fit. If you’re looking for a structured, performance-driven partnership designed to scale your brand intentionally — let’s start the conversation.
+              If you’re looking for tactical posting support, we may not be the right fit. If you’re looking for a structured, performance-driven partnership designed to scale your brand intentionally, let’s start the conversation.
             </p>
 
             <div className="inline-block bg-secondary text-primary font-bold px-6 py-3 rounded-full mb-12">
@@ -504,34 +504,86 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button size="lg" className="rounded-full h-16 px-10 text-lg shadow-xl shadow-primary/20" data-testid="button-cta-apply">
-                Apply to Work With SocialKreu
-              </Button>
-              <Button variant="outline" size="lg" className="rounded-full h-16 px-10 text-lg border-2" data-testid="button-cta-book">
+              <Button size="lg" className="rounded-full h-16 px-10 text-lg shadow-xl shadow-primary/20 cursor-pointer" data-testid="button-cta-apply" onClick={() => window.open("https://calendly.com/socialkreu/30min", "_blank")}>
                 Book Your Growth Call
               </Button>
+              {/* <Button variant="outline" size="lg" className="rounded-full h-16 px-10 text-lg border-2" data-testid="button-cta-book">
+                Book Your Growth Call
+              </Button> */}
             </div>
           </div>
         </section>
       </main>
 
+      <a
+        href="https://wa.me/916376827535"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Chat on WhatsApp"
+        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-black/20 transition-transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#25D366]"
+      >
+        <span className="sr-only">Chat with SocialKreu on WhatsApp</span>
+        <img src="/social.png" alt="" aria-hidden="true" className="h-8 w-8 object-contain" />
+      </a>
+
       {/* FOOTER */}
       <footer className="bg-background py-12 border-t border-border">
-        <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-          <div className="max-w-md">
-            <div className="text-2xl font-bold font-display flex items-center gap-2 mb-4 justify-center md:justify-start">
-              <div className="w-6 h-6 bg-primary rounded flex items-center justify-center">
-                <span className="text-white text-sm leading-none">S</span>
-              </div>
-              SocialKreu.
+        <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="md:col-span-1">
+            <div className="flex items-center gap-3 mb-4">
+              <img src="/logo.png" alt="Logo" className="h-10" />
+              {/* <div className="text-lg font-bold font-display">SocialKreu.</div> */}
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground max-w-xs">
               SocialKreu is a strategy-first digital growth partner helping brands turn visibility into authority and structured systems into scalable growth.
             </p>
+            <div className="mt-4 flex items-center gap-4">
+              <a href="https://wa.me/916376827535" aria-label="WhatsApp" className="text-muted-foreground hover:text-primary transition-colors">
+                <MessageCircle className="h-5 w-5" />
+              </a>
+              <a href="https://www.instagram.com/socialkreu?igsh=ZG43MGpjajJvNWgw" aria-label="Instagram" className="text-muted-foreground hover:text-primary transition-colors"><Instagram className="w-5 h-5" /></a>
+              <a href="#" aria-label="Facebook" className="text-muted-foreground hover:text-primary transition-colors"><Facebook className="w-5 h-5" /></a>
+            </div>
+            {/* <div className="mt-4 flex items-start gap-2 text-sm text-muted-foreground">
+              <MapPin className="w-4 h-4 mt-0.5" />
+              <div>Based in India • Remote Worldwide</div>
+            </div> */}
           </div>
-          
-          <div className="text-sm text-muted-foreground/60 font-medium">
-            © {new Date().getFullYear()} SocialKreu. All Rights Reserved.
+
+          <div>
+            <h4 className="text-base font-semibold mb-3">What we offer?</h4>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>360° Digital Marketing Services</li>
+              <li>Paid Media Marketing</li>
+              <li>Social Media Marketing</li>
+              <li>SEO & Content</li>
+              <li>Video Production</li>
+              <li>Influencer Marketing</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-base font-semibold mb-3">Contact Us At:</h4>
+            <div className="flex flex-col sm:flex-col sm:items-start gap-3">
+              <Button asChild className="rounded-full px-4 py-2">
+                <a href="tel:+916376827535" aria-label="Call SocialKreu" className="flex items-center">
+                  <Phone className="mr-2 w-4 h-4" />
+                  +91 63768 27535
+                </a>
+              </Button>
+              <Button asChild className="rounded-full px-4 py-2">
+                <a href="mailto:support@socialkreu.com" aria-label="Email SocialKreu" className="flex items-center">
+                  <Mail className="mr-2 w-4 h-4" />
+                  support@socialkreu.com
+                </a>
+              </Button>
+            </div>
+
+            
+          </div>
+
+          <div className="md:col-span-3 border-t border-border/40 mt-8 pt-6 flex items-center justify-center text-sm text-muted-foreground">
+            <div>© {new Date().getFullYear()} SocialKreu. All Rights Reserved.</div>
           </div>
         </div>
       </footer>
